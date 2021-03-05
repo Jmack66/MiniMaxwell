@@ -31,8 +31,9 @@ int other_sensors[OS_COUNT] = {OS_COUNT, OS_1, OS_2};
 int& sensor_types[SENS_TYPES] = {&temp_sensors, &other_sensors};
 
 //go through our arrays of sensors and set the pin mode to be an input
-for (auto i; i < SENS_TYPES; i ++;) {
-  for(int j = 1; j < (*(i[0])); j++){
-      pinMode(j,INPUT);
+for (auto& i : sensor_types) {
+  //get sensor types and get the first value of the 
+  for(int j = 1; j < (*i[0]); j++){
+      pinMode((*i[j]),INPUT);
     }
 }
